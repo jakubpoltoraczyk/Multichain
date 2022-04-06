@@ -1,0 +1,9 @@
+Dostęp do ściezki pliku zrzuconego jest w tej funkcji:
+
+
+void BasicController::processDroppedFile(const std::string &filePath) {
+  // todo: implement dropped file processing behavior
+  std::cout << "Dropped file path: " << filePath << std::endl;
+}
+
+
