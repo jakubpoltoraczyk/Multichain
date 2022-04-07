@@ -1,0 +1,3 @@
+tar command:
+
+tar -cvf ipfs_cmd.tar /home/peter/Desktop/MultiChainCpp_Proj_v2
