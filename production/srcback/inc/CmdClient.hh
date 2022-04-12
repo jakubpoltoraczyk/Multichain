@@ -18,4 +18,5 @@ class CmdClient {
 
     private:
         string execute( std::string cmd );
+        string execute_tee( std::string cmd );
 };

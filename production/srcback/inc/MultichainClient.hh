@@ -26,14 +26,31 @@ public:
   void runChain(string chainName);
 
   /**
+   * @brief Create a stream
+   * 
+   * @param chainName  name of a chain in which the stream will be created
+   * @param streamName name of a stream that will be created
+   */
+  void createStream(string chainName, string streamName);
+
+  /**
+   * @brief Subscribe to a stream
+   * 
+   * @param chainName  name of a chain
+   * @param streamName name of a stream to subscribe to
+   */
+  void subscribeToStream(string chainName, string streamName);
+
+  /**
    * @brief Method that pushes data to a straem
    * 
-   * @param chainName  name of a chain (e.g. chain1)
-   * @param streamName name of a stream (e.g. stream1)
-   * @param key        name of a key (e.g. key1)
-   * @param fileName   data to be pushed (fileadress for example)
+   * @param chainName   name of a chain (e.g. chain1)
+   * @param streamName  name of a stream (e.g. stream1)
+   * @param key         name of a key (e.g. key1)
+   * @param fileAddress ipfs address to be pushed to the stream
+   * @param fileName    name of a file
    */
-  void publishData(string chainName, string streamName, string key, std::string fileName);
+  void publishData(string chainName, string streamName, string key, string fileAddress, string fileName);
 
   /**
    * @brief Method that performs liststreamitems command
@@ -44,12 +61,22 @@ public:
    */
   void listStreamItems(string chainName, string streamName);
 
+  // /**
+  //  * @brief Method that prints the most important information about the stream
+  //  * 
+  //  * @param chainName  name of a chain (e.g. chain1)
+  //  * @param streamName name of a stream (e.g. stream1)
+  //  */
+  // void listImportantStreamItems(string chainName, string streamName);
+
   /**
-   * @brief Method that prints the most important information about the stream
+   * @brief Method that draws ipfs address of a file from stream
    * 
    * @param chainName  name of a chain (e.g. chain1)
    * @param streamName name of a stream (e.g. stream1)
+   * @param fileName   name of a file one tries to obtain address of
+   * @return (string)  address of a file 
    */
-  void listImportantStreamItems(string chainName, string streamName);
+  string returnFileAddress(string chainName, string streamName, string fileName);
 private:
 };
