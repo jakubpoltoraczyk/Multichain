@@ -25,10 +25,15 @@ void BasicController::processDroppedFile(const std::string &filePath) {
   auto fileToProcess =
       filePath.substr(temp.length(), filePath.length() - temp.length());
 
+  
+  std::cout << "to jest fileToProcess: " << fileToProcess << endl;
+
   IpfsClient ipfsClient;
   auto fileAddress = ipfsClient.AddFileToIpfs(fileToProcess);
 
   MultichainClient multichainClient;
+  multichainClient.initChain("chain1","stream1");
   multichainClient.publishData("chain1", "stream1", "key1", fileAddress);
   multichainClient.listStreamItems("chain1", "stream1");
+  multichainClient.listImportantStreamItems("chain1", "stream1");  
 }
