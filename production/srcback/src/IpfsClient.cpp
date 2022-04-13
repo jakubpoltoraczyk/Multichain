@@ -37,7 +37,7 @@ string IpfsClient::GetFileFromIpfs(string fileHash){
 }
 
 void IpfsClient::SafeFileFromIpfsToFile(string fileHash, string fileName){
-    SendRequest_noResponse("ipfs cat " + fileHash + " >> " + fileName);
+    SendRequest_noResponse("ipfs cat " + fileHash + " | tee " + fileName);
 }
 
 

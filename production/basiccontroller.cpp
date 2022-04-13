@@ -32,7 +32,7 @@ void BasicController::processDroppedFile(const std::string &filePath) {
 
 
   string ObtainedAddressFromStream;
-  string fileName = "plikTXT";
+  string fileName = fileToProcess;
   string chainName = "chain1";
   string streamName = "stream1";
   string keyName = "key1";
@@ -46,4 +46,6 @@ void BasicController::processDroppedFile(const std::string &filePath) {
   ObtainedAddressFromStream = multichainClient.returnFileAddress(chainName, streamName, fileName);
 
   std::cout << endl << "Odzyskany adres pliku: " << ObtainedAddressFromStream << endl;
+
+  ipfsClient.SafeFileFromIpfsToFile(ObtainedAddressFromStream, "/home/node_a/Pulpit/ImportantData.txt");
 }
