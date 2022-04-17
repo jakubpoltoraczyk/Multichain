@@ -32,13 +32,14 @@ void BasicController::processDroppedFile(const std::string &filePath) {
 
 
   string ObtainedAddressFromStream;
+  vector<string> fileList;
   string fileName = fileToProcess;
   string chainName = "chain1";
   string streamName = "stream1";
   string keyName = "key1";
 
   MultichainClient multichainClient;
-  // multichainClient.initChain(chainName, streamName);
+  multichainClient.initChain(chainName, streamName);
   multichainClient.createStream(chainName, streamName);
   multichainClient.subscribeToStream(chainName, streamName);
   multichainClient.publishData(chainName, streamName, keyName, fileAddress, fileName);
@@ -48,4 +49,11 @@ void BasicController::processDroppedFile(const std::string &filePath) {
   std::cout << endl << "Odzyskany adres pliku: " << ObtainedAddressFromStream << endl;
 
   ipfsClient.SafeFileFromIpfsToFile(ObtainedAddressFromStream, "/home/node_a/Pulpit/ImportantData.txt");
+
+  fileList = multichainClient.listChainFiles(chainName, streamName);      //fileList is a vector of file names existing in chain
+                                                                          //names can repeat themselves
+  cout << "Lista plikow:" << endl;
+  for (const string& i : fileList) {
+    cout << i << endl;
+  }
 }

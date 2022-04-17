@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <string>
 #include <iterator>
+#include <vector>
 
 using namespace std; 
 

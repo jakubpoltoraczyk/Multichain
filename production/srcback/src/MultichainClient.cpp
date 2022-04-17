@@ -52,13 +52,13 @@ void MultichainClient::publishData(string chainName, string streamName,
 }
 
 void MultichainClient::listStreamItems(string chainName, string streamName) {
-  auto order = "multichain-cli " + chainName + " liststreamitems " + streamName;
+  auto order = "multichain-cli " + chainName + " liststreamitems " + streamName + " false 100";
   auto result = SendRequest(order);
   // cout << result << endl;
 }
 
 string MultichainClient::returnFileAddress(string chainName, string streamName, string fileName) {
-  auto order = "multichain-cli " + chainName + " liststreamitems " + streamName;
+  auto order = "multichain-cli " + chainName + " liststreamitems " + streamName + " false 100";
   auto result = SendRequest(order);
 
   string tmp;
@@ -79,5 +79,34 @@ string MultichainClient::returnFileAddress(string chainName, string streamName, 
   // cout << endl << endl << "to jest adres: " << fileAddress << endl;
 
   return fileAddress;
+}
+
+vector<string> MultichainClient::listChainFiles(string chainName, string streamName) {
+  auto order = "multichain-cli " + chainName + " liststreamitems " + streamName + " false 100";
+  auto result = SendRequest(order);
+
+  string tmp;
+  ifstream file("result.txt");
+
+  vector<string> fileList;
+
+  while(true) {
+    if(tmp == "\"name\"") {
+      for(int i = 0; i < 2; i++) {
+        file >> tmp;
+      }
+      tmp.erase(0,1);               //removes quotation mark at the beginning
+      tmp.erase(prev(tmp.end()));   //removes comma mark at the end
+      tmp.erase(prev(tmp.end()));   //removes quotation mark at the end
+
+      fileList.push_back(tmp);
+      //cout << tmp << endl;
+      // cout << "HELLO" << endl;
+    }
+    file >> tmp;
+    if(file.eof()) break;
+  }
+
+  return fileList;
 }
 

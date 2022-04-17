@@ -78,5 +78,15 @@ public:
    * @return (string)  address of a file 
    */
   string returnFileAddress(string chainName, string streamName, string fileName);
+
+  /**
+   * @brief Lists file names existing within the chain
+   * 
+   * @param chainName  name of a chain
+   * @param streamName name of a stream
+   * @return (vector<string>) vector that contains names of the files
+   */
+  vector<string> listChainFiles(string chainName, string streamName);
+
 private:
 };
