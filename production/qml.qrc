@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-    <file>srcgui/configuration/ColorConstants.qml</file>
-    <file>srcgui/configuration/MainWindowConstants.qml</file>
-    <file>srcgui/configuration/qmldir</file>
-    <file>srcgui/dropfilearea/DropFileArea.qml</file>
-    <file>main.qml</file>
-    </qresource>
-</RCC>

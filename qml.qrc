@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+    <file>srcgui/configuration/ColorConstants.qml</file>
+    <file>srcgui/configuration/DropFileAreaConstants.qml</file>
+    <file>srcgui/configuration/qmldir</file>
+    <file>srcgui/configuration/SharedConstants.qml</file>
+    <file>srcgui/dropfilearea/DropFileArea.qml</file>
+    <file>srcgui/images/dropfileicon.png</file>
+    <file>srcgui/images/dropfileicon_faded.png</file>
+    <file>srcgui/managementpanel/ManagementPanel.qml</file>
+    <file>main.qml</file>
+    </qresource>
+</RCC>

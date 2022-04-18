@@ -8,6 +8,9 @@ QtObject {
     /** Black color used in application */
     readonly property color black: "black"
 
+    /** Extra light grey used in application */
+    readonly property color extraLightGrey: "#eeeeee"
+
     /** Light grey color used in application */
     readonly property color lightGrey: "#cccccc"
 }

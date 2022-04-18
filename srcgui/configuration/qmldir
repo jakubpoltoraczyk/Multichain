@@ -1,0 +1,3 @@
+singleton ColorConstants 1.0 ColorConstants.qml
+singleton DropFileAreaConstants 1.0 DropFileAreaConstants.qml
+singleton SharedConstants 1.0 SharedConstants.qml
