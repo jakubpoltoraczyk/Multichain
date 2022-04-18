@@ -6,6 +6,7 @@
     <file>srcgui/configuration/ManagementPanelConstants.qml</file>
     <file>srcgui/configuration/qmldir</file>
     <file>srcgui/configuration/SharedConstants.qml</file>
+    <file>srcgui/contentitem/ContentItem.qml</file>
     <file>srcgui/dropfilearea/DropFileArea.qml</file>
     <file>srcgui/images/dropfileicon.png</file>
     <file>srcgui/images/dropfileicon_faded.png</file>
@@ -13,6 +14,9 @@
     <file>srcgui/images/listviewicon_faded.png</file>
     <file>srcgui/images/questionicon.png</file>
     <file>srcgui/images/questionicon_faded.png</file>
+    <file>srcgui/images/uploadfileicon.png</file>
+    <file>srcgui/images/uploadfileicon_faded.png</file>
+    <file>srcgui/listviewarea/ListViewArea.qml</file>
     <file>srcgui/managementpanel/ManagementButton.qml</file>
     <file>srcgui/managementpanel/ManagementPanel.qml</file>
     <file>srcgui/rectanglesolidborder/RectangleSolidBorder.qml</file>

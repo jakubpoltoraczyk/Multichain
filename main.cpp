@@ -12,8 +12,8 @@ int main(int argc, char *argv[]) {
   BasicController basicController;
 
   auto objectsToRegister = basicController.getObjectsToRegister();
-  for (const auto &object : objectsToRegister) {
-    engine.rootContext()->setContextProperty(object.first, object.second);
+  for (const auto &[registerName, registerObject] : objectsToRegister) {
+    engine.rootContext()->setContextProperty(registerName, registerObject);
   }
 
   engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

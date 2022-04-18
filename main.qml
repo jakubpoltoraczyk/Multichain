@@ -2,7 +2,7 @@ import QtQuick.Window 2.12
 import QtQuick 2.12
 
 import "srcgui/configuration"
-import "srcgui/dropfilearea"
+import "srcgui/contentitem"
 import "srcgui/managementpanel"
 
 Window {
@@ -17,10 +17,14 @@ Window {
     Row {
         id: mainRow
 
-        DropFileArea {
-            id: dropFileArea
+        ContentItem {
+            id: contentItem
             width: 450
             height: mainWindow.height
+            dropFileAreaVisibility: managementPanel.lastReleasedButton == ManagementPanelConstants.DropFileArea
+            listViewAreaVisibility: managementPanel.lastReleasedButton == ManagementPanelConstants.ListViewArea
+            unknownArea2Visibility: managementPanel.lastReleasedButton == ManagementPanelConstants.Unknown2
+            unknownArea3Visibility: managementPanel.lastReleasedButton == ManagementPanelConstants.Unknown3
         }
 
         ManagementPanel {

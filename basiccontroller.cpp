@@ -30,7 +30,6 @@ void BasicController::processDroppedFile(const std::string &filePath) {
   IpfsClient ipfsClient;
   auto fileAddress = ipfsClient.AddFileToIpfs(fileToProcess);
 
-
   string ObtainedAddressFromStream;
   vector<string> fileList;
   string fileName = fileToProcess;
@@ -42,18 +41,23 @@ void BasicController::processDroppedFile(const std::string &filePath) {
   multichainClient.initChain(chainName, streamName);
   multichainClient.createStream(chainName, streamName);
   multichainClient.subscribeToStream(chainName, streamName);
-  multichainClient.publishData(chainName, streamName, keyName, fileAddress, fileName);
-  multichainClient.listStreamItems(chainName, streamName); 
-  ObtainedAddressFromStream = multichainClient.returnFileAddress(chainName, streamName, fileName);
+  multichainClient.publishData(chainName, streamName, keyName, fileAddress,
+                               fileName);
+  multichainClient.listStreamItems(chainName, streamName);
+  ObtainedAddressFromStream =
+      multichainClient.returnFileAddress(chainName, streamName, fileName);
 
-  std::cout << endl << "Odzyskany adres pliku: " << ObtainedAddressFromStream << endl;
+  std::cout << endl
+            << "Odzyskany adres pliku: " << ObtainedAddressFromStream << endl;
 
-  ipfsClient.SafeFileFromIpfsToFile(ObtainedAddressFromStream, "/home/node_a/Pulpit/ImportantData.txt");
+  ipfsClient.SafeFileFromIpfsToFile(ObtainedAddressFromStream,
+                                    "/home/node_a/Pulpit/ImportantData.txt");
 
-  fileList = multichainClient.listChainFiles(chainName, streamName);      //fileList is a vector of file names existing in chain
-                                                                          //names can repeat themselves
+  fileList = multichainClient.listChainFiles(
+      chainName, streamName); // fileList is a vector of file names existing in
+                              // chain names can repeat themselves
   cout << "Lista plikow:" << endl;
-  for (const string& i : fileList) {
+  for (const string &i : fileList) {
     cout << i << endl;
   }
 }

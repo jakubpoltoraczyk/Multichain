@@ -6,34 +6,56 @@ Rectangle {
     id: managementPanel
     color: ColorConstants.lightGrey
 
+    /** Contains last released button */
+    property int lastReleasedButton: ManagementPanelConstants.ButtonType.DropFileArea
+
     Column {
         id: managementPanelRow
         spacing: ManagementPanelConstants.spacing
         anchors.centerIn: parent
 
+        ManagementButton {
+            id: dropFileButton
+            pressedIconSource: ManagementPanelConstants.uploadFileFadedIconSource
+            releasedIconSource: ManagementPanelConstants.uploadFileIconSource
+
+            /** Called when button has been just released */
+            onReleased: {
+                lastReleasedButton = ManagementPanelConstants.ButtonType.DropFileArea
+            }
+        }
 
         ManagementButton {
             id: listViewButton
             pressedIconSource: ManagementPanelConstants.listViewFadedIconSource
             releasedIconSource: ManagementPanelConstants.listViewIconSource
-        }
 
-        ManagementButton {
-            id: unknownButton1
-            pressedIconSource: ManagementPanelConstants.unknownButtonFadedIconSource
-            releasedIconSource: ManagementPanelConstants.uknownButtonIconSource
+            /** Called when button has been just released */
+            onReleased: {
+                lastReleasedButton = ManagementPanelConstants.ButtonType.ListViewArea
+            }
         }
 
         ManagementButton {
             id: unknownButton2
             pressedIconSource: ManagementPanelConstants.unknownButtonFadedIconSource
             releasedIconSource: ManagementPanelConstants.uknownButtonIconSource
+
+            /** Called when button has been just released */
+            onReleased: {
+                lastReleasedButton = ManagementPanelConstants.ButtonType.Unknown2
+            }
         }
 
         ManagementButton {
             id: unknownButton3
             pressedIconSource: ManagementPanelConstants.unknownButtonFadedIconSource
             releasedIconSource: ManagementPanelConstants.uknownButtonIconSource
+
+            /** Called when button has been just released */
+            onReleased: {
+                lastReleasedButton = ManagementPanelConstants.ButtonType.Unknown3
+            }
         }
     }
 }

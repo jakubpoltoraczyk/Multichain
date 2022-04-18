@@ -7,7 +7,7 @@
 #include <vector>
 
 /** Class which represents application basic controller */
-class BasicController: public QObject {
+class BasicController : public QObject {
   Q_OBJECT
 public:
   /**
@@ -27,7 +27,7 @@ public slots:
    * @brief Called when dropped file process should be started
    * @param filePath Path to dropped file
    */
-  void processDroppedFile(const std::string & filePath);
+  void processDroppedFile(const std::string &filePath);
 
 private:
   DropFileAreaController dropFileAreaController;

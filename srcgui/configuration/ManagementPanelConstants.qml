@@ -5,6 +5,12 @@ QtObject {
     /** Spacing between components in management panel */
     readonly property int spacing: 20
 
+    /** Source of icon in upload file button */
+    readonly property string uploadFileIconSource: SharedConstants.imagePath.arg("uploadfileicon.png")
+
+    /** Source of faded icon in upload file button */
+    readonly property string uploadFileFadedIconSource: SharedConstants.imagePath.arg("uploadfileicon_faded.png")
+
     /** Source of icon in list view button */
     readonly property string listViewIconSource: SharedConstants.imagePath.arg("listviewicon.png")
 
@@ -16,4 +22,12 @@ QtObject {
 
     /** Source of faded icon in unknown button */
     readonly property string unknownButtonFadedIconSource: SharedConstants.imagePath.arg("questionicon_faded.png")
+
+    /** Contains available management panel button types */
+    enum ButtonType {
+        DropFileArea,
+        ListViewArea,
+        Unknown2,
+        Unknown3
+    }
 }
