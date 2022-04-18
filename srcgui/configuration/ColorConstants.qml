@@ -13,4 +13,10 @@ QtObject {
 
     /** Light grey color used in application */
     readonly property color lightGrey: "#cccccc"
+
+    /** Grey color used in application */
+    readonly property color grey: "#acacac"
+
+    /** Dark grey color used in application */
+    readonly property color darkGrey: "#606060"
 }

@@ -1,3 +1,5 @@
 singleton ColorConstants 1.0 ColorConstants.qml
 singleton DropFileAreaConstants 1.0 DropFileAreaConstants.qml
+singleton ManagementButtonConstants 1.0 ManagementButtonConstants.qml
+singleton ManagementPanelConstants 1.0 ManagementPanelConstants.qml
 singleton SharedConstants 1.0 SharedConstants.qml

@@ -2,12 +2,20 @@
     <qresource prefix="/">
     <file>srcgui/configuration/ColorConstants.qml</file>
     <file>srcgui/configuration/DropFileAreaConstants.qml</file>
+    <file>srcgui/configuration/ManagementButtonConstants.qml</file>
+    <file>srcgui/configuration/ManagementPanelConstants.qml</file>
     <file>srcgui/configuration/qmldir</file>
     <file>srcgui/configuration/SharedConstants.qml</file>
     <file>srcgui/dropfilearea/DropFileArea.qml</file>
     <file>srcgui/images/dropfileicon.png</file>
     <file>srcgui/images/dropfileicon_faded.png</file>
+    <file>srcgui/images/listviewicon.png</file>
+    <file>srcgui/images/listviewicon_faded.png</file>
+    <file>srcgui/images/questionicon.png</file>
+    <file>srcgui/images/questionicon_faded.png</file>
+    <file>srcgui/managementpanel/ManagementButton.qml</file>
     <file>srcgui/managementpanel/ManagementPanel.qml</file>
+    <file>srcgui/rectanglesolidborder/RectangleSolidBorder.qml</file>
     <file>main.qml</file>
     </qresource>
 </RCC>
