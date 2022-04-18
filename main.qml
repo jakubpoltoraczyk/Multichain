@@ -9,7 +9,9 @@ Window {
     id: mainWindow
     width: 600
     height: 400
+    minimumWidth: width
     maximumWidth: width
+    minimumHeight: height
     maximumHeight: height
     color: ColorConstants.lightGrey
     visible: true
