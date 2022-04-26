@@ -3,10 +3,13 @@
 #include "srcback/inc/MultichainClient.hh"
 
 #include <iostream>
+#include <vector>
 
 namespace {
 constexpr char FILE_PREFIX[] = "file://";
-}
+
+std::vector<QString> exampleVector{"Hello1", "Hello2", "Hello3"};
+} // namespace
 
 BasicController::BasicController(QObject *parent) : QObject(parent) {
   QObject::connect(&dropFileAreaController,
@@ -16,7 +19,8 @@ BasicController::BasicController(QObject *parent) : QObject(parent) {
 
 std::vector<std::pair<QString, QObject *>>
 BasicController::getObjectsToRegister() {
-  return {{"dropFileAreaController", &dropFileAreaController}};
+  return {{"controller", this},
+          {"dropFileAreaController", &dropFileAreaController}};
 }
 
 void BasicController::processDroppedFile(const std::string &filePath) {
@@ -60,4 +64,13 @@ void BasicController::processDroppedFile(const std::string &filePath) {
   for (const string &i : fileList) {
     cout << i << endl;
   }
+}
+
+void BasicController::myCustomSlot() {
+  // QString::fromStdString("imvdksm")
+  emit sendToComboBox(exampleVector); // here send vector of strings
+}
+
+void BasicController::onConfirmButtonReleased(QString customText) {
+  std::cout << "\n\n\n" << customText.toStdString() << "\n" << std::endl;
 }

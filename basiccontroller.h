@@ -29,6 +29,15 @@ public slots:
    */
   void processDroppedFile(const std::string &filePath);
 
+  /** Example slot */
+  void myCustomSlot();
+
+  /** To complete */
+  void onConfirmButtonReleased(QString customText);
+
+signals:
+  void sendToComboBox(const std::vector<QString> &exampleVector);
+
 private:
   DropFileAreaController dropFileAreaController;
 };

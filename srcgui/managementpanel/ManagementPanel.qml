@@ -9,6 +9,10 @@ Rectangle {
     /** Contains last released button */
     property int lastReleasedButton: ManagementPanelConstants.ButtonType.DropFileArea
 
+    Component.onCompleted: {
+        listViewButton.released.connect(controller.myCustomSlot)
+    }
+
     Column {
         id: managementPanelRow
         spacing: ManagementPanelConstants.spacing
