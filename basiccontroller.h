@@ -3,6 +3,7 @@
 #include "srcgui/dropfilearea/dropfileareacontroller.h"
 
 #include <QObject>
+#include <QStringList>
 
 #include <vector>
 
@@ -29,15 +30,24 @@ public slots:
    */
   void processDroppedFile(const std::string &filePath);
 
-  /** Example slot */
-  void myCustomSlot();
+  /** Called when list view button has been released */
+  void onListViewButtonReleased();
 
-  /** To complete */
-  void onConfirmButtonReleased(QString customText);
+  /**
+   * @brief Called when list view file has just been selected
+   * @param customText Name of selected file
+   */
+  void onListViewFileSelected(const QString &fileName);
 
 signals:
-  void sendToComboBox(const std::vector<QString> &exampleVector);
+  /** Emitted when list view area should be updated */
+  void updateListViewArea();
 
 private:
+  Q_PROPERTY(QStringList listViewAreaFiles READ getListViewAreaFiles NOTIFY
+                 updateListViewArea)
+  const QStringList &getListViewAreaFiles() const;
+  QStringList listViewAreaFiles; ///< Contains files listed in list view area
+
   DropFileAreaController dropFileAreaController;
 };

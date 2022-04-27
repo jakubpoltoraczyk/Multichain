@@ -9,8 +9,9 @@ Rectangle {
     /** Contains last released button */
     property int lastReleasedButton: ManagementPanelConstants.ButtonType.DropFileArea
 
+    /** Called when component has been just created */
     Component.onCompleted: {
-        listViewButton.released.connect(controller.myCustomSlot)
+        listViewButton.released.connect(controller.onListViewButtonReleased)
     }
 
     Column {

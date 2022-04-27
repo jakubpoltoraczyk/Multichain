@@ -7,28 +7,22 @@ Rectangle {
     id: listViewArea
     color: ColorConstants.extraLightGrey
 
-    signal confirmButtonReleased(string customText)
+    /** Emitted when file from list view has been just selected */
+    signal listViewFileSelected(string fileName)
 
+    /** Called when component has been just created */
     Component.onCompleted: {
-        confirmButtonReleased.connect(controller.onConfirmButtonReleased)
-    }
-
-    Connections {
-        target: controller
-
-        onSendToComboBox: {
-            console.log(exampleVector[0])
-        }
+        listViewFileSelected.connect(controller.onListViewFileSelected)
     }
 
     ComboBox {
         id: listViewComboBox
         anchors.centerIn: parent
-        model: ["First", "Second", "Third"]
+        model: controller.listViewAreaFiles
     }
 
     Button {
-        id: confirmButtom
+        id: confirmButton
         width: 50
         height: 50
         x: 100 
@@ -36,7 +30,7 @@ Rectangle {
         visible: true
 
         onReleased: {
-            confirmButtonReleased(listViewComboBox.currentText)
+            listViewFileSelected(listViewComboBox.currentText)
         }
     }
 }

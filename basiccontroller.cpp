@@ -6,9 +6,14 @@
 #include <vector>
 
 namespace {
-constexpr char FILE_PREFIX[] = "file://";
 
-std::vector<QString> exampleVector{"Hello1", "Hello2", "Hello3"};
+namespace Test {
+const int MAX_NUMBER_OF_FILES = 3;
+const QString FILE_NAME = QStringLiteral("File%0");
+const QString FILE_PROCESS_MESSAGE =
+    QStringLiteral("Process of \"%0\" has been finished");
+} // namespace Test
+
 } // namespace
 
 BasicController::BasicController(QObject *parent) : QObject(parent) {
@@ -66,11 +71,19 @@ void BasicController::processDroppedFile(const std::string &filePath) {
   }
 }
 
-void BasicController::myCustomSlot() {
-  // QString::fromStdString("imvdksm")
-  emit sendToComboBox(exampleVector); // here send vector of strings
+void BasicController::onListViewButtonReleased() {
+  std::generate_n(
+      std::back_inserter(listViewAreaFiles), Test::MAX_NUMBER_OF_FILES,
+      [index = 0]() mutable { return Test::FILE_NAME.arg(index++); });
+
+  emit updateListViewArea();
 }
 
-void BasicController::onConfirmButtonReleased(QString customText) {
-  std::cout << "\n\n\n" << customText.toStdString() << "\n" << std::endl;
+void BasicController::onListViewFileSelected(const QString &fileName) {
+  std::cout << Test::FILE_PROCESS_MESSAGE.arg(fileName).toStdString()
+            << std::endl;
+}
+
+const QStringList &BasicController::getListViewAreaFiles() const {
+  return listViewAreaFiles;
 }
