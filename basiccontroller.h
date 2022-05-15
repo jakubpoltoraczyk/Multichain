@@ -47,7 +47,7 @@ private:
   Q_PROPERTY(QStringList listViewAreaFiles READ getListViewAreaFiles NOTIFY
                  updateListViewArea)
   const QStringList &getListViewAreaFiles() const;
-  QStringList listViewAreaFiles; ///< Contains files listed in list view area
+  QStringList listViewAreaFiles; ///< Contains files listed in list view area     //gdziekolwiek tu doloze i wyemituje sygnal, to pojawi sie item w comboboxie
 
   DropFileAreaController dropFileAreaController;
 };

@@ -13,9 +13,10 @@ class CmdClient {
     public: 
         CmdClient();
 
-        string SendRequest(string requestMsg);
+        string SendRequest_normal(string requestMsg);
+        string SendRequest_tee(string requestMsg);
         void SendRequest_noResponse(string requestMsg);
-
+        void ClearConsole();
 
     private:
         string execute( std::string cmd );

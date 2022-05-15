@@ -5,7 +5,7 @@ IpfsClient::IpfsClient(){
 }
 
 string IpfsClient::CheckVersion(){
-    string tmp = SendRequest("ipfs --version");
+    string tmp = SendRequest_tee("ipfs --version");
     IpfsTests test;
     if(!test.IpfsVersionTest(tmp)){
         cerr << "!!! - - - IpfsClient::CheckVersion() -> version test - not valid result" << "\r\n";
@@ -14,7 +14,7 @@ string IpfsClient::CheckVersion(){
 }
 
 string IpfsClient::AddFileToIpfs(string filePath){
-    string result = SendRequest("ipfs add " + filePath);
+    string result = SendRequest_tee("ipfs add " + filePath);
     
     // std::cout << "This is filePath: " << filePath << std::endl;
     // std::cout << "This is result: " << result << std::endl;  // <- result jest pusty, dlatego zwracany jest błąd out_of_range
@@ -27,12 +27,12 @@ string IpfsClient::AddFileToIpfs(string filePath){
 // commands to do
 
 string IpfsClient::PinHashes(){
-    string result = SendRequest("ipfs pin ls");
+    string result = SendRequest_tee("ipfs pin ls");
     return result;
 }
 
 string IpfsClient::GetFileFromIpfs(string fileHash){
-    string result = SendRequest("ipfs cat " + fileHash + "");
+    string result = SendRequest_tee("ipfs cat " + fileHash + "");
     return result;
 }
 

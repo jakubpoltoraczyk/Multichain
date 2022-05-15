@@ -11,6 +11,8 @@ add_executable(${PROJECT_NAME}
   srcback/src/IpfsClient.cpp
   srcback/src/IpfsTests.cpp
   srcback/src/MultichainClient.cpp
+  srcback/src/MultichainInitialization.cpp
+  srcback/src/StringFinder.cpp
   main.cpp
 
   basiccontroller.h
@@ -19,6 +21,8 @@ add_executable(${PROJECT_NAME}
   srcback/inc/IpfsTests.hh
   srcback/inc/MultichainClient.hh
   srcgui/dropfilearea/dropfileareacontroller.h
+  srcback/inc/MultichainInitialization.hh
+  srcback/inc/StringFinder.hh
 
   qml.qrc
 )

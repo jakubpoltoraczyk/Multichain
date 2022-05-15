@@ -1,5 +1,6 @@
 #pragma once
 
+#include "StringFinder.hh"
 #include "CmdClient.hh"
 
 using namespace std;
