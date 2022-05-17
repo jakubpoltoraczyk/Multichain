@@ -48,7 +48,8 @@ BasicController::BasicController(QObject *parent) : QObject(parent) {
 std::vector<std::pair<QString, QObject *>>
 BasicController::getObjectsToRegister() {
   return {{"controller", this},
-          {"dropFileAreaController", &dropFileAreaController}};
+          {"dropFileAreaController", &dropFileAreaController},
+          {"customMessageDialogController", &customMessageDialogController}};
 }
 
 void BasicController::processDroppedFile(const std::string &filePath) {
@@ -108,9 +109,13 @@ void BasicController::onListViewButtonReleased() {
     }
   }
   emit updateListViewArea();                                                           //tutaj uzupelniam comboboxa
+  customMessageDialogController.showMessageDialog(
+    "Update list view area", "List view area has been just updated");
 }
 
 void BasicController::onListViewFileSelected(const QString &fileName) {
+  customMessageDialogController.showMessageDialog(
+    "File selected", "File from list view area has been just selected");
   std::cout << Test::FILE_PROCESS_MESSAGE.arg(fileName).toStdString() << std::endl;   //tutaj tym poleceniem dostaje nazwe pliku z comboboxa
 
   std::cout << endl<< endl<< "------> to nie chce sie wyswietlic, a powinno bo wybieram tu pliki! " << endl;

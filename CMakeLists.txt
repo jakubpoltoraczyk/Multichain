@@ -6,23 +6,25 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(${PROJECT_NAME}
   basiccontroller.cpp
-  srcgui/dropfilearea/dropfileareacontroller.cpp
+  main.cpp
   srcback/src/CmdClient.cpp
   srcback/src/IpfsClient.cpp
   srcback/src/IpfsTests.cpp
   srcback/src/MultichainClient.cpp
   srcback/src/MultichainInitialization.cpp
   srcback/src/StringFinder.cpp
-  main.cpp
+  srcgui/dropfilearea/dropfileareacontroller.cpp
+  srcgui/messagedialog/custommessagedialogcontroller.cpp
 
   basiccontroller.h
   srcback/inc/CmdClient.hh
   srcback/inc/IpfsClient.hh
   srcback/inc/IpfsTests.hh
   srcback/inc/MultichainClient.hh
-  srcgui/dropfilearea/dropfileareacontroller.h
   srcback/inc/MultichainInitialization.hh
   srcback/inc/StringFinder.hh
+  srcgui/dropfilearea/dropfileareacontroller.h
+  srcgui/messagedialog/custommessagedialogcontroller.h
 
   qml.qrc
 )

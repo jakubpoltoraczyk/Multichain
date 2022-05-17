@@ -1,6 +1,7 @@
 #pragma once
 
 #include "srcgui/dropfilearea/dropfileareacontroller.h"
+#include "srcgui/messagedialog/custommessagedialogcontroller.h"
 
 #include <QObject>
 #include <QStringList>
@@ -50,4 +51,5 @@ private:
   QStringList listViewAreaFiles; ///< Contains files listed in list view area     //gdziekolwiek tu doloze i wyemituje sygnal, to pojawi sie item w comboboxie
 
   DropFileAreaController dropFileAreaController;
+  CustomMessageDialogController customMessageDialogController;
 };

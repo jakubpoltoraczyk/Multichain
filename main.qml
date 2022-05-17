@@ -4,6 +4,7 @@ import QtQuick 2.12
 import "srcgui/configuration"
 import "srcgui/contentitem"
 import "srcgui/managementpanel"
+import "srcgui/messagedialog"
 
 Window {
     id: mainWindow
@@ -35,4 +36,8 @@ Window {
             height: mainWindow.height
         }
     }
+
+    CustomMessageDialog {
+        id: customMessageDialog
+    }   
 }

@@ -23,6 +23,7 @@
     <file>srcgui/listviewarea/ListViewArea.qml</file>
     <file>srcgui/managementpanel/ManagementButton.qml</file>
     <file>srcgui/managementpanel/ManagementPanel.qml</file>
+    <file>srcgui/messagedialog/CustomMessageDialog.qml</file>
     <file>srcgui/rectanglesolidborder/RectangleSolidBorder.qml</file>
     <file>main.qml</file>
     </qresource>

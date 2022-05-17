@@ -6,11 +6,7 @@
 class DropFileAreaController : public QObject {
   Q_OBJECT
 public:
-  /**
-   * @brief Create a new instance of drop file area controller
-   * @param parent Pointer to parent widget
-   */
-  DropFileAreaController(QObject *parent = nullptr);
+  using QObject::QObject;
 
 public slots:
   /**
