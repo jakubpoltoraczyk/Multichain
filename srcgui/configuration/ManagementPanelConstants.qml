@@ -17,6 +17,12 @@ QtObject {
     /** Source of faded icon in list view button */
     readonly property string listViewFadedIconSource: SharedConstants.imagePath.arg("listviewicon_faded.png")
 
+    /** Source of icon in authors button */
+    readonly property string authorsIconSource: SharedConstants.imagePath.arg("authors.png")
+
+    /** Source of faded icon in authors button */
+    readonly property string authorsFadedIconSource: SharedConstants.imagePath.arg("authors_faded.png")
+
     /** Source of icon in unknown button */
     readonly property string uknownButtonIconSource: SharedConstants.imagePath.arg("questionicon.png")
 
@@ -27,7 +33,7 @@ QtObject {
     enum ButtonType {
         DropFileArea,
         ListViewArea,
-        Unknown2,
+        Authors,
         Unknown3
     }
 }

@@ -1,13 +1,17 @@
 <RCC>
     <qresource prefix="/">
+    <file>srcgui/authorsview/AuthorsView.qml</file>
     <file>srcgui/configuration/ColorConstants.qml</file>
     <file>srcgui/configuration/DropFileAreaConstants.qml</file>
+    <file>srcgui/configuration/ListViewAreaConstants.qml</file>
     <file>srcgui/configuration/ManagementButtonConstants.qml</file>
     <file>srcgui/configuration/ManagementPanelConstants.qml</file>
     <file>srcgui/configuration/qmldir</file>
     <file>srcgui/configuration/SharedConstants.qml</file>
     <file>srcgui/contentitem/ContentItem.qml</file>
     <file>srcgui/dropfilearea/DropFileArea.qml</file>
+    <file>srcgui/images/authors.png</file>
+    <file>srcgui/images/authors_faded.png</file>
     <file>srcgui/images/dropfileicon.png</file>
     <file>srcgui/images/dropfileicon_faded.png</file>
     <file>srcgui/images/listviewicon.png</file>

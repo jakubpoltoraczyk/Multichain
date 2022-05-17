@@ -3,6 +3,7 @@ import QtQuick 2.12
 import "../configuration"
 import "../dropfilearea"
 import "../listviewarea"
+import "../authorsview"
 
 Item {
     id: contentItem
@@ -17,7 +18,7 @@ Item {
     property alias unknownArea2Visibility: unknownArea2.visible
 
     /** Visibility of unknown area 3 */
-    property alias unknownArea3Visibility: unknownArea3.visible
+    property alias authorsViewVisibility: authorsView.visible
 
     DropFileArea {
         id: dropFileArea
@@ -38,10 +39,9 @@ Item {
         color: ColorConstants.black
     }
 
-    Rectangle {
-        id: unknownArea3
+    AuthorsView {
+        id: authorsView
         anchors.fill: parent
         visible: false
-        color: ColorConstants.black
     }
 }

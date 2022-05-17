@@ -7,4 +7,7 @@ QtObject {
 
     /** General path to appropriate images used in application */
     readonly property string imagePath: "qrc:/srcgui/images/%1"
+
+    /** Default font pixel size value used in application */
+    readonly property int defaultFontPixelSize: 12
 }

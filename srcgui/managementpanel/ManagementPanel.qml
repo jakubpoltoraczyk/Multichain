@@ -54,12 +54,12 @@ Rectangle {
 
         ManagementButton {
             id: unknownButton3
-            pressedIconSource: ManagementPanelConstants.unknownButtonFadedIconSource
-            releasedIconSource: ManagementPanelConstants.uknownButtonIconSource
+            pressedIconSource: ManagementPanelConstants.authorsFadedIconSource
+            releasedIconSource: ManagementPanelConstants.authorsIconSource
 
             /** Called when button has been just released */
             onReleased: {
-                lastReleasedButton = ManagementPanelConstants.ButtonType.Unknown3
+                lastReleasedButton = ManagementPanelConstants.ButtonType.Authors
             }
         }
     }

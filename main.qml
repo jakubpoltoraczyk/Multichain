@@ -26,7 +26,7 @@ Window {
             dropFileAreaVisibility: managementPanel.lastReleasedButton === ManagementPanelConstants.DropFileArea
             listViewAreaVisibility: managementPanel.lastReleasedButton === ManagementPanelConstants.ListViewArea
             unknownArea2Visibility: managementPanel.lastReleasedButton === ManagementPanelConstants.Unknown2
-            unknownArea3Visibility: managementPanel.lastReleasedButton === ManagementPanelConstants.Unknown3
+            authorsViewVisibility: managementPanel.lastReleasedButton === ManagementPanelConstants.Authors
         }
 
         ManagementPanel {
