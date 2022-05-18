@@ -17,7 +17,6 @@ class StringFinder{
         string GetFirstValue(string& body, string& startString, string& endString);
         string GetFirstValue(ifstream& stream, string startString);
         string GetListOfValues(string& body, string& startString, string& endString);
-        //bool IpfsVersionTest(string resultToTest);
 
 
     private:

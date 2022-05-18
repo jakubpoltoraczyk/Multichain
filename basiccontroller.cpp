@@ -98,10 +98,13 @@ void BasicController::processDroppedFile(const std::string &filePath) {
 
 void BasicController::onListViewButtonReleased() {
   listViewAreaFiles.clear();
+  MultichainClient multichainClient;
   MultichainInitialization multichainInitialization;
   if(multichainInitialization.IsConnected()){
-    MultichainClient multichainClient;
     vector<string> res = multichainClient.listChainFiles(multichainInitialization.chainName, multichainInitialization.streamName);
+    auto last = std::unique(res.begin(), res.end());  //
+    res.erase(last, res.end());                       //czyszczenie powtarzajacych sie rekordow - przeniesc do funkcji zwracajacej!
+
     for (size_t i = 0; i < res.size(); i++)
     {
       listViewAreaFiles.push_back(QString::fromStdString(res[i]));
@@ -109,42 +112,26 @@ void BasicController::onListViewButtonReleased() {
     }
   }
   emit updateListViewArea();                                                           //tutaj uzupelniam comboboxa
-  customMessageDialogController.showMessageDialog(
-    "Update list view area", "List view area has been just updated");
+  multichainClient.ClearConsole();
+  //customMessageDialogController.showMessageDialog("Update list view area", "List view area has been just updated");
 }
 
 void BasicController::onListViewFileSelected(const QString &fileName) {
   customMessageDialogController.showMessageDialog(
     "File selected", "File from list view area has been just selected");
-  std::cout << Test::FILE_PROCESS_MESSAGE.arg(fileName).toStdString() << std::endl;   //tutaj tym poleceniem dostaje nazwe pliku z comboboxa
+    
+  StringFinder stringFinder;
+  string tmp = Test::FILE_PROCESS_MESSAGE.arg(fileName).toStdString();
+  string tmp2 = "\"";
+  string filePath = stringFinder.GetFirstValue(tmp , tmp2 , tmp2);
+  // ^ wyciagniecie z komunikatu stringa ze scierzka
 
-  std::cout << endl<< endl<< "------> to nie chce sie wyswietlic, a powinno bo wybieram tu pliki! " << endl;
-  //std::cout << endl<< "------> fileName: " << endl << fileName<< endl<< endl<< endl<< endl;
-
-
-
-
-
-
-
-
-
-
-
-  // po uzyskaniu nazwy -> scierzki do pliku
-  // odkomentowac i sprawdzic czy ponizszy kod dziala 
-
-  //powinien od wyciagac plik z ipfs-s
-
-
-
-  /*
-  string _fileName = "/home/peter/Desktop/Multichain/main.cpp";
   MultichainClient multichainClient;
   IpfsClient ipfsClient;
-  string ObtainedAddressFromStream = multichainClient.returnFileAddress(chainName, streamName, _fileName);
-  ipfsClient.SafeFileFromIpfsToFile(ObtainedAddressFromStream, "/home/node_a/Pulpit/ImportantData.txt");
-  */
+  string ObtainedAddressFromStream = multichainClient.returnFileAddress(chainName, streamName, filePath);
+  ipfsClient.SafeFileFromIpfsToFile(ObtainedAddressFromStream, filePath);
+  multichainClient.ClearConsole();
+  cout << "Pobrano plik: " << filePath << endl;
 }
 
 const QStringList &BasicController::getListViewAreaFiles() const {
