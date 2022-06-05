@@ -16,6 +16,7 @@ Window {
     maximumHeight: height
     color: ColorConstants.lightGrey
     visible: true
+    flags: Qt.Dialog
 
     Row {
         id: mainRow
@@ -26,7 +27,6 @@ Window {
             height: mainWindow.height
             dropFileAreaVisibility: managementPanel.lastReleasedButton === ManagementPanelConstants.DropFileArea
             listViewAreaVisibility: managementPanel.lastReleasedButton === ManagementPanelConstants.ListViewArea
-            unknownArea2Visibility: managementPanel.lastReleasedButton === ManagementPanelConstants.Unknown2
             authorsViewVisibility: managementPanel.lastReleasedButton === ManagementPanelConstants.Authors
         }
 

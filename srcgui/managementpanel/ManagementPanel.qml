@@ -4,7 +4,12 @@ import "../configuration"
 
 Rectangle {
     id: managementPanel
-    color: ColorConstants.lightGrey
+    gradient: Gradient {
+        orientation: Gradient.Horizontal
+        GradientStop { position: 0.0; color: "#a6e8f5" }
+        GradientStop { position: 0.33; color: "#bceef7" }
+        GradientStop { position: 1.0; color: "#d1f8ff" }
+    }
 
     /** Contains last released button */
     property int lastReleasedButton: ManagementPanelConstants.ButtonType.DropFileArea
@@ -42,18 +47,7 @@ Rectangle {
         }
 
         ManagementButton {
-            id: unknownButton2
-            pressedIconSource: ManagementPanelConstants.unknownButtonFadedIconSource
-            releasedIconSource: ManagementPanelConstants.uknownButtonIconSource
-
-            /** Called when button has been just released */
-            onReleased: {
-                lastReleasedButton = ManagementPanelConstants.ButtonType.Unknown2
-            }
-        }
-
-        ManagementButton {
-            id: unknownButton3
+            id: authorsButton
             pressedIconSource: ManagementPanelConstants.authorsFadedIconSource
             releasedIconSource: ManagementPanelConstants.authorsIconSource
 

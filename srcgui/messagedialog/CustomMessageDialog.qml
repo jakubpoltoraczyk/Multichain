@@ -6,7 +6,7 @@ MessageDialog {
     title: customMessageDialogController.title
     text: customMessageDialogController.content
     standardButtons: StandardButton.Ok
-    icon: StandardIcon.Error
+    icon: StandardIcon.Warning
     visible: customMessageDialogController.visibility
 
     onAccepted: {

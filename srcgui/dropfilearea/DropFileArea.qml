@@ -6,12 +6,18 @@ Rectangle {
     id: dropFileRectangle
     state: DropFileAreaConstants.dragExitedState
 
+    gradient: Gradient {
+        orientation: Gradient.Horizontal
+        GradientStop { position: 0.0; color: "#3ecae6" }
+        GradientStop { position: 0.33; color: "#86e5f7" }
+        GradientStop { position: 1.0; color: "#a6e8f5" }
+    }
+
     states: [
         State {
             name: DropFileAreaConstants.dragEnteredState
             PropertyChanges {
                 target: dropFileRectangle
-                color: ColorConstants.white
             }
             PropertyChanges {
                 target: dropFileIconImage
@@ -22,7 +28,6 @@ Rectangle {
             name: DropFileAreaConstants.dragExitedState
             PropertyChanges {
                 target: dropFileRectangle
-                color: ColorConstants.extraLightGrey
             }
             PropertyChanges {
                 target: dropFileIconImage

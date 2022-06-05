@@ -14,9 +14,6 @@ Item {
     /** Visibility of list view area */
     property alias listViewAreaVisibility: listViewArea.visible
 
-    /** Visibility of unknown area 2 */
-    property alias unknownArea2Visibility: unknownArea2.visible
-
     /** Visibility of unknown area 3 */
     property alias authorsViewVisibility: authorsView.visible
 
@@ -30,13 +27,6 @@ Item {
         id: listViewArea
         anchors.fill: parent
         visible: false
-    }
-
-    Rectangle {
-        id: unknownArea2
-        anchors.fill: parent
-        visible: false
-        color: ColorConstants.black
     }
 
     AuthorsView {

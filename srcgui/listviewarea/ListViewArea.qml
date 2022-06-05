@@ -6,7 +6,12 @@ import "../rectanglesolidborder"
 
 Rectangle {
     id: listViewArea
-    color: ColorConstants.extraLightGrey
+    gradient: Gradient {
+        orientation: Gradient.Horizontal
+        GradientStop { position: 0.0; color: "#3ecae6" }
+        GradientStop { position: 0.33; color: "#86e5f7" }
+        GradientStop { position: 1.0; color: "#a6e8f5" }
+    }
 
     /** Emitted when file from list view has been just selected */
     signal listViewFileSelected(string fileName)
@@ -33,18 +38,24 @@ Rectangle {
                 font.pixelSize: SharedConstants.defaultFontPixelSize
             }
         }
+        background: Rectangle {
+            color: ColorConstants.white
+        }
     }
 
     Button {
         id: confirmButton
         width: ListViewAreaConstants.confirmButtoneWidth
         height: ListViewAreaConstants.confirmButtoneHeight
-        x: ListViewAreaConstants.confirmButtonCoordinateX
-        y: ListViewAreaConstants.confirmButtonCoordinateY
         visible: true
-        palette.button: ColorConstants.lightGrey
         text: "Confirm"
         state: ListViewAreaConstants.releasedState
+        anchors.top: listViewComboBox.bottom
+        anchors.horizontalCenter: listViewComboBox.horizontalCenter
+        anchors.topMargin: 20
+        background: Rectangle {
+            color: ColorConstants.white
+        }
 
         states: [
             State {

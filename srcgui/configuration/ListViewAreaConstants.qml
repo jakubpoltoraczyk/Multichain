@@ -6,16 +6,10 @@ QtObject {
     readonly property int comboBoxMaxWidth: 250
 
     /** Width of confirm button */
-    readonly property int confirmButtoneWidth: 100
+    readonly property int confirmButtoneWidth: 90
 
     /** Height of confirm button */
-    readonly property int confirmButtoneHeight: 50
-
-    /** Coordinate X of confirm button */
-    readonly property int confirmButtonCoordinateX: 300
-
-    /** Coordinate Y of confirm button */
-    readonly property int confirmButtonCoordinateY: 300
+    readonly property int confirmButtoneHeight: 45
 
     /** Released state name of confirm button */
     readonly property string releasedState: "releasedState"

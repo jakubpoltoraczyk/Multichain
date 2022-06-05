@@ -111,6 +111,8 @@ void BasicController::onListViewButtonReleased() {
       //cout << res[i] << endl;
     }
   }
+  listViewAreaFiles.push_back("File no. 1");
+  listViewAreaFiles.push_back("File no. 2");
   emit updateListViewArea();                                                           //tutaj uzupelniam comboboxa
   multichainClient.ClearConsole();
   //customMessageDialogController.showMessageDialog("Update list view area", "List view area has been just updated");
