@@ -52,7 +52,7 @@ Rectangle {
         state: ListViewAreaConstants.releasedState
         anchors.top: listViewComboBox.bottom
         anchors.horizontalCenter: listViewComboBox.horizontalCenter
-        anchors.topMargin: 20
+        anchors.topMargin: 30
         background: Rectangle {
             color: ColorConstants.white
         }
